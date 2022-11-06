@@ -14,3 +14,19 @@ a {
 a:hover {
   color: rgba(242, 171, 77);
 }
+.category__btn {
+  width: 140px;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 0px 0px 14px 14px;
+  border: none;
+  margin: 5px;
+  cursor: pointer;
+  background-color: rgb(88, 109, 252);
+  color: white;
+}
+
+.category__btn:hover {
+  background-color: rgba(242, 171, 77);
+}

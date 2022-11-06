@@ -1,3 +1,18 @@
 {
-  "products": {}
+  "products": [
+    {
+      "showDay": "today",
+      "title": "Аяш-2",
+      "ageLimit": "(12+)",
+      "image": "https://cinematica.kg/uploads/movies/554ece24-4948-45be-b1a6-ef56b1ad6262.png/300/430",
+      "id": 1
+    },
+    {
+      "showDay": "today",
+      "title": "Аяш-2",
+      "ageLimit": "(12+)",
+      "image": "https://cinematica.kg/uploads/movies/554ece24-4948-45be-b1a6-ef56b1ad6262.png/300/430",
+      "id": 2
+    }
+  ]
 }

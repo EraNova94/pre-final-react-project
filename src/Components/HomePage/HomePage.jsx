@@ -1,15 +1,39 @@
-import { Box, Container, Grid } from "@mui/material";
-import React from "react";
+import { Box, Button, Container, Grid, RadioGroup } from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { Navigation, Autoplay } from "swiper";
 import { Swiper } from "swiper/react";
 import { SwiperSlide } from "swiper/react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/bundle";
 import "swiper/css/autoplay";
+import { useContext } from "react";
+import { productContext } from "../../Context/ProductContextProvider";
 
 const HomePage = () => {
+  const { productsArr, readProduct, deleteProduct } =
+    useContext(productContext);
+  useEffect(() => {
+    readProduct();
+  }, []);
+  // const [category, setCategory] = useState("all");
+  // const [paramSearch, setParamsearch] = useSearchParams();
+  // console.log(paramSearch);
+  // console.log(category);
+  // useEffect(() => {
+  //   if (category === "all") {
+  //     setParamsearch({
+  //       q: paramSearch.get("q") || "",
+  //     });
+  //   } else {
+  //     setParamsearch({
+  //       category: category,
+  //       q: paramSearch.get("q") || "",
+  //     });
+  //   }
+  // }, [category, paramSearch]);
+
   return (
     <Box sx={{ mt: "160px" }}>
       <Container maxWidth="lg">
@@ -69,50 +93,91 @@ const HomePage = () => {
           </SwiperSlide>
         </Swiper>
         <Grid
-          display="flex"
-          justifyContent="space-evenly"
           width="100%"
-          margin="0 auto"
-          fontSize="24px"
           mt="40px"
           bgcolor="rgba(0, 0, 0, 0.7)"
           borderRadius="12px">
-          <Link href="#">
-            <button value="all">Афиша</button>
-          </Link>
-          <Link href="#">
-            <button value="todayAtTheCinema">Сегодня в кино</button>
-          </Link>
-          <Link href="#">
-            <button value="comingSoon">Скоро в кино</button>
-          </Link>
+          <RadioGroup
+            sx={{
+              display: "flex",
+              justifyContent: "space-evenly",
+              flexDirection: "row",
+            }}
+            defaultValue="all"
+            // value={category}
+            // onChange={e => setCategory(e.target.value)}
+          >
+            <Link href="#">
+              <button className="category__btn" value="all">
+                Афиша
+              </button>
+            </Link>
+            <Link href="#">
+              <button className="category__btn" value="today">
+                Сегодня в кино
+              </button>
+            </Link>
+            <Link href="#">
+              <button className="category__btn" value="coming-soon">
+                Скоро в кино
+              </button>
+            </Link>
+          </RadioGroup>
         </Grid>
-        <Grid mt={1}>
-          <Box>
-            <img
-              src="https://cinematica.kg/uploads/movies/554ece24-4948-45be-b1a6-ef56b1ad6262.png/300/430"
-              alt=""
-              style={{ borderRadius: "12px", width: "15%" }}
-            />
-            <Box
-              sx={{
-                color: "white",
-                position: "relative",
-                bottom: "54px",
-                fontSize: "16px",
-                fontFamily: "Roboto",
-                width: "15%",
-                display: "grid",
-                alignItems: "center",
-                textAlign: "center",
-                backgroundColor: "#02558B",
-                height: "50px",
-                borderRadius: "12px 0",
-              }}>
-              <span>Аяш-2</span>
-              <span>(12+)</span>
-            </Box>
-          </Box>
+        <Grid
+          container
+          direction="row"
+          justifyContent="space-between"
+          alignItems="flex-start"
+          width="100%"
+          mx="auto"
+          my="40px">
+          {productsArr
+            ? productsArr.map(elem => (
+                <Box key={elem.id}>
+                  <img
+                    src={elem.image}
+                    alt={elem.title}
+                    style={{ borderRadius: "12px" }}
+                  />
+                  <Box
+                    width="100%"
+                    height="35px"
+                    bgcolor="rgb(24 64 213)"
+                    color="white"
+                    fontSize="18px"
+                    fontFamily="Roboto"
+                    fontWeight="700"
+                    display="flex"
+                    justifyContent="space-evenly"
+                    alignItems="center"
+                    position="relative"
+                    bottom="39px"
+                    borderRadius="22px 0 12px 0">
+                    <span>{elem.title}</span>
+                    <span>{elem.ageLimit}</span>
+                    <span>{elem.showDay}</span>
+                  </Box>
+                  <Box
+                    mb="30px"
+                    display="flex"
+                    justifyContent="space-between"
+                    width="100%">
+                    <Link to={`/edit/${elem.id}`}>
+                      <Button variant="contained" color="success">
+                        Изменить
+                      </Button>
+                    </Link>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      onClick={() => deleteProduct(elem.id)}>
+                      Удалить
+                    </Button>
+                  </Box>
+                </Box>
+              ))
+            : null}
         </Grid>
       </Container>
     </Box>
