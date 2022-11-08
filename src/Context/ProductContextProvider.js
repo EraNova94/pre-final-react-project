@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { createContext, useReducer } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const productContext = createContext();
 
@@ -8,13 +8,18 @@ const API = "http://localhost:8000/products";
 
 const INIT_STATE = {
   products: null,
-  oneProduct: "",
+  oneProduct: null,
+  pageTotalCount: 1,
 };
 
 function reducer(prevState, action) {
   switch (action.type) {
     case "GET_PRODUCT":
-      return { ...prevState, products: action.payload };
+      return {
+        ...prevState,
+        products: action.payload.data,
+        pageTotalCount: Math.ceil(action.payload.headers["x-total-count"] / 4),
+      };
     case "GET_ONE_PRODUCT":
       return { ...prevState, oneProduct: action.payload };
     default:
@@ -26,6 +31,7 @@ const ProductContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
   // console.log(state);
   const navigate = useNavigate();
+  const location = useLocation();
 
   // ? create
   async function addProduct(newProduct) {
@@ -41,11 +47,11 @@ const ProductContextProvider = ({ children }) => {
 
   async function readProduct() {
     try {
-      const { data } = await axios(API);
-      // console.log(data);
+      const res = await axios(`${API}/${location.search}`);
+      // console.log(res);
       dispatch({
         type: "GET_PRODUCT",
-        payload: data,
+        payload: res,
       });
     } catch (error) {
       console.log(error);
@@ -96,6 +102,7 @@ const ProductContextProvider = ({ children }) => {
     deleteProduct,
     productsArr: state.products,
     oneProduct: state.oneProduct,
+    pageTotalCount: state.pageTotalCount,
   };
   return (
     <productContext.Provider value={cloud}>{children}</productContext.Provider>

@@ -1,18 +1,130 @@
 {
   "products": [
     {
-      "showDay": "today",
-      "title": "Аяш-2",
+      "showDay": "asd",
+      "title": "Аяш",
       "ageLimit": "(12+)",
       "image": "https://cinematica.kg/uploads/movies/554ece24-4948-45be-b1a6-ef56b1ad6262.png/300/430",
       "id": 1
     },
     {
       "showDay": "today",
-      "title": "Аяш-2",
-      "ageLimit": "(12+)",
-      "image": "https://cinematica.kg/uploads/movies/554ece24-4948-45be-b1a6-ef56b1ad6262.png/300/430",
+      "title": "Amsterdam",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/d390d3fd-dc25-458d-94f4-4cc50356d8bf.jpg/300/430",
       "id": 2
+    },
+    {
+      "showDay": "today",
+      "title": "Астрал",
+      "ageLimit": "Реинкарнация",
+      "image": "https://cinematica.kg/uploads/movies/68793f85-3a91-4c30-88ec-e41fa0bf558a.jpg/300/430",
+      "id": 3
+    },
+    {
+      "showDay": "today",
+      "title": "Чрезвычайная с-я",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/e5173359-0ae1-4958-8d35-0c98fc53ebde.png/300/430",
+      "id": 4
+    },
+    {
+      "showDay": "today",
+      "title": "В эфире",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/4dbe68ab-f838-4418-851f-b6dbcc3e57a6.JPG/300/430",
+      "id": 5
+    },
+    {
+      "showDay": "today",
+      "title": "Звоните Джейн",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/06f1da89-bc80-44de-8c84-b4243e89a2f4.jpg/300/430",
+      "id": 6
+    },
+    {
+      "showDay": "today",
+      "title": "Мой тигр",
+      "ageLimit": "(6+)",
+      "image": "https://cinematica.kg/uploads/movies/798aaebb-4c3e-4460-b4f6-039b95040113.jpg/300/430",
+      "id": 7
+    },
+    {
+      "showDay": "today",
+      "title": "Черный Адам",
+      "ageLimit": "(12+)",
+      "image": "https://cinematica.kg/uploads/movies/95da43eb-9545-4f41-ac3c-b090c99ad5f4.jpg/300/430",
+      "id": 8
+    },
+    {
+      "showDay": "today",
+      "title": "Пёс-самурай",
+      "ageLimit": "(6+)",
+      "image": "https://cinematica.kg/uploads/movies/a4e5815f-96ef-47be-b45a-1b350c5fffc4.jpg/300/430",
+      "id": 9
+    },
+    {
+      "showDay": "today",
+      "title": "Хэллоуин",
+      "ageLimit": "(18+)",
+      "image": "https://cinematica.kg/uploads/movies/2818f4c7-d50a-452b-b4b6-fd98936f436c.jpeg/300/430",
+      "id": 10
+    },
+    {
+      "showDay": "today",
+      "title": "One Piece",
+      "ageLimit": "(14+)",
+      "image": "https://cinematica.kg/uploads/movies/80832089-466a-468d-97e2-ce58c38019ca.jpg/300/430",
+      "id": 11
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "Сверхъестественное",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/0f07bee2-60f3-461d-a910-1bc58a5912ea.jpg/300/430",
+      "id": 12
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "Черная Пантера 2",
+      "ageLimit": "(12+)",
+      "image": "https://cinematica.kg/uploads/movies/9fd33fbd-1c9e-4112-b179-2f9f824e393d.jpg/300/430",
+      "id": 13
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "Королева Воин",
+      "ageLimit": "(12+)",
+      "image": "https://cinematica.kg/uploads/movies/a2918377-af63-4fde-ba6a-4b3996dd3360.jpg/300/430",
+      "id": 14
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "Покерфэйс",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/e8af1c36-002c-4120-a8bb-f9ca70bf5eeb.jpg/300/430",
+      "id": 15
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "Двойная петля",
+      "ageLimit": "(12+)",
+      "image": "https://cinematica.kg/uploads/movies/aba02152-a2c3-41c4-adcd-2a2764309cc7.jpg/300/430",
+      "id": 16
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "312",
+      "ageLimit": "61532",
+      "image": "6513",
+      "id": 17
+    },
+    {
+      "showDay": "comingSoon",
+      "title": "56132",
+      "ageLimit": "16532",
+      "image": "1532",
+      "id": 18
     }
   ]
 }

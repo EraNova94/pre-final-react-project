@@ -30,3 +30,6 @@ a:hover {
 .category__btn:hover {
   background-color: rgba(242, 171, 77);
 }
+.card:hover {
+  zoom: 1.05;
+}

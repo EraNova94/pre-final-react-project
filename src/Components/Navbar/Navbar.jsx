@@ -4,8 +4,17 @@ import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import { Grid } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import Menu from "../Navbar/Menu";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [menuActive, setMenuActive] = useState(false);
+  const items = [
+    { value: "РАСПИСАНИЕ ФИЛЬМОВ", href: "/schedule" },
+    { value: "КИНОТЕАТР", href: "/about" },
+    { value: "СНЕК-БАР", href: "/snackBar" },
+    { value: "КОНТАКТЫ", href: "/contacts" },
+  ];
   return (
     <Box
       sx={{
@@ -20,14 +29,15 @@ const Navbar = () => {
           display="flex"
           alignItems="center"
           justifyContent="space-between"
-          pt={2}
+          py="50px"
           width="100%"
           height="70px">
           <Box sx={{ cursor: "pointer" }}>
             <Link to="/">
               <img
-                src="https://cdn.cdnlogo.com/logos/g/99/general-cinema.svg"
-                width="90px"
+                id="logo-main"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx_TvL_5pTq_HgIn3d8utu4bW1JMtjL4SKdg&usqp=CAU"
+                width="200px"
                 height="60px"
                 alt="logo"
               />
@@ -37,31 +47,45 @@ const Navbar = () => {
             sx={{
               width: "55%",
             }}>
-            <ul
+            <Box
+              className="navbar-btns"
               style={{
                 display: "flex",
                 justifyContent: "space-between",
-                fontFamily: "roboto",
-                cursor: "pointer",
+                alignItems: "center",
+                fontFamily: "Roboto",
                 padding: "0",
-                listStyleType: "none",
                 textDecoration: "none",
               }}>
-              <Link to="/schedule">РАСПИСАНИЕ ФИЛЬМОВ</Link>
-              <Link to="/about">КИНОТЕАТР</Link>
-              <Link to="/snackBar">СНЕК-БАР</Link>
-              <Link to="contacts">КОНТАКТЫ</Link>
-            </ul>
+              <Link to="/schedule" className="nav-link-btn">
+                РАСПИСАНИЕ ФИЛЬМОВ
+              </Link>
+              <Link to="/about" className="nav-link-btn">
+                КИНОТЕАТР
+              </Link>
+              <Link to="/snackBar" className="nav-link-btn">
+                СНЕК-БАР
+              </Link>
+              <Link to="contacts" className="nav-link-btn">
+                КОНТАКТЫ
+              </Link>
+              <Box>
+                <AdminPanelSettingsIcon
+                  color="warning"
+                  fontSize="large"
+                  sx={{ cursor: "pointer" }}
+                />
+              </Box>
+            </Box>
           </Box>
-          <Box>
-            <AdminPanelSettingsIcon
-              color="warning"
-              fontSize="large"
-              sx={{ cursor: "pointer" }}
-            />
+          <Box
+            className="burger-btn"
+            onClick={() => setMenuActive(!menuActive)}>
+            <span />
           </Box>
         </Grid>
       </Container>
+      <Menu active={menuActive} items={items} />
     </Box>
   );
 };

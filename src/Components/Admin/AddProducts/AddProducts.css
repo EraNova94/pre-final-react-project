@@ -2,9 +2,10 @@
   width: 25%;
   display: flex;
   flex-direction: column;
-  margin: 60px auto;
+  margin: 30px auto;
+  background: white;
 }
 
 .outlined-basic {
-  height: 65px;
+  height: 75px;
 }

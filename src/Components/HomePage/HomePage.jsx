@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, RadioGroup } from "@mui/material";
+import { Box, Button, Container, Grid, Pagination } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Navigation, Autoplay } from "swiper";
 import { Swiper } from "swiper/react";
@@ -12,27 +12,32 @@ import { useContext } from "react";
 import { productContext } from "../../Context/ProductContextProvider";
 
 const HomePage = () => {
-  const { productsArr, readProduct, deleteProduct } =
+  const { productsArr, readProduct, deleteProduct, pageTotalCount } =
     useContext(productContext);
+  const [showDay, setShowDay] = useState("all");
+  const [paramSearch, setParamsearch] = useSearchParams();
+  const [page, setPage] = useState(1);
+  // console.log(paramSearch);
+  // console.log(showDay);
+  useEffect(() => {
+    if (showDay === "all") {
+      setParamsearch({
+        q: paramSearch.get("q") || "",
+        _page: page,
+        _limit: 4,
+      });
+    } else {
+      setParamsearch({
+        showDay: showDay,
+        q: paramSearch.get("q") || "",
+        _page: page,
+        _limit: 4,
+      });
+    }
+  }, [paramSearch, showDay, page]);
   useEffect(() => {
     readProduct();
-  }, []);
-  // const [category, setCategory] = useState("all");
-  // const [paramSearch, setParamsearch] = useSearchParams();
-  // console.log(paramSearch);
-  // console.log(category);
-  // useEffect(() => {
-  //   if (category === "all") {
-  //     setParamsearch({
-  //       q: paramSearch.get("q") || "",
-  //     });
-  //   } else {
-  //     setParamsearch({
-  //       category: category,
-  //       q: paramSearch.get("q") || "",
-  //     });
-  //   }
-  // }, [category, paramSearch]);
+  }, [paramSearch, pageTotalCount]);
 
   return (
     <Box sx={{ mt: "160px" }}>
@@ -97,32 +102,42 @@ const HomePage = () => {
           mt="40px"
           bgcolor="rgba(0, 0, 0, 0.7)"
           borderRadius="12px">
-          <RadioGroup
+          <Box
             sx={{
               display: "flex",
               justifyContent: "space-evenly",
               flexDirection: "row",
+              flexWrap: "wrap",
             }}
             defaultValue="all"
-            // value={category}
-            // onChange={e => setCategory(e.target.value)}
-          >
+            value={showDay}>
             <Link href="#">
-              <button className="category__btn" value="all">
+              <button
+                className="category__btn"
+                value="all"
+                onClick={e => setShowDay(e.target.value)}>
                 Афиша
               </button>
             </Link>
             <Link href="#">
-              <button className="category__btn" value="today">
+              <button
+                className="category__btn"
+                id="first"
+                value="today"
+                onClick={e => setShowDay(e.target.value)}>
                 Сегодня в кино
               </button>
             </Link>
             <Link href="#">
-              <button className="category__btn" value="coming-soon">
+              <button
+                className="category__btn"
+                id="second"
+                value="comingSoon"
+                onClick={e => setShowDay(e.target.value)}>
                 Скоро в кино
               </button>
             </Link>
-          </RadioGroup>
+          </Box>
         </Grid>
         <Grid
           container
@@ -134,11 +149,15 @@ const HomePage = () => {
           my="40px">
           {productsArr
             ? productsArr.map(elem => (
-                <Box key={elem.id}>
+                <Box key={elem.id} className="card">
                   <img
                     src={elem.image}
                     alt={elem.title}
-                    style={{ borderRadius: "12px" }}
+                    style={{
+                      borderRadius: "12px",
+                      width: "240px",
+                      height: "340px",
+                    }}
                   />
                   <Box
                     width="100%"
@@ -156,7 +175,6 @@ const HomePage = () => {
                     borderRadius="22px 0 12px 0">
                     <span>{elem.title}</span>
                     <span>{elem.ageLimit}</span>
-                    <span>{elem.showDay}</span>
                   </Box>
                   <Box
                     mb="30px"
@@ -178,6 +196,24 @@ const HomePage = () => {
                 </Box>
               ))
             : null}
+        </Grid>
+        <Grid
+          width="100%"
+          bgcolor="rgb(240,255,240)"
+          border="1px solid black"
+          borderRadius="7px">
+          <Pagination
+            count={pageTotalCount}
+            variant="outlined"
+            color="primary"
+            page={page}
+            onChange={(e, value) => setPage(value)}
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          />
         </Grid>
       </Container>
     </Box>
