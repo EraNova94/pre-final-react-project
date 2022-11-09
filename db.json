@@ -9,13 +9,6 @@
     },
     {
       "showDay": "today",
-      "title": "Amsterdam",
-      "ageLimit": "(16+)",
-      "image": "https://cinematica.kg/uploads/movies/d390d3fd-dc25-458d-94f4-4cc50356d8bf.jpg/300/430",
-      "id": 2
-    },
-    {
-      "showDay": "today",
       "title": "Астрал",
       "ageLimit": "Реинкарнация",
       "image": "https://cinematica.kg/uploads/movies/68793f85-3a91-4c30-88ec-e41fa0bf558a.jpg/300/430",
@@ -125,6 +118,24 @@
       "ageLimit": "16532",
       "image": "1532",
       "id": 18
+    },
+    {
+      "showDay": "123",
+      "title": "231",
+      "ageLimit": "321",
+      "image": "321",
+      "trailer": "231",
+      "description": "231",
+      "time": "231",
+      "zone": "231",
+      "price": "231",
+      "time2": "231",
+      "zone2": "231",
+      "price2": "231",
+      "time3": "231",
+      "zone3": "231",
+      "price3": "231",
+      "id": 19
     }
   ]
 }

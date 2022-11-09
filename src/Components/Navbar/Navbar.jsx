@@ -45,14 +45,15 @@ const Navbar = () => {
           </Box>
           <Box
             sx={{
-              width: "55%",
+              width: "50%",
             }}>
             <Box
               className="navbar-btns"
               style={{
                 display: "flex",
-                justifyContent: "space-between",
+                justifyContent: "space-around",
                 alignItems: "center",
+                flexWrap: "wrap",
                 fontFamily: "Roboto",
                 padding: "0",
                 textDecoration: "none",
@@ -85,7 +86,7 @@ const Navbar = () => {
           </Box>
         </Grid>
       </Container>
-      <Menu active={menuActive} items={items} />
+      <Menu active={menuActive} setActive={setMenuActive} items={items} />
     </Box>
   );
 };

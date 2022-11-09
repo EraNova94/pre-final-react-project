@@ -38,7 +38,7 @@ const Footer = () => {
           <Box
             display="flex"
             flexDirection="column"
-            gap="10px"
+            gap="15px"
             px="20px"
             pt="10px">
             <Link>Сотрудничество</Link>

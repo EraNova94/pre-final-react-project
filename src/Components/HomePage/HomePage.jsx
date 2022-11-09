@@ -53,7 +53,7 @@ const HomePage = () => {
             top: "50px",
             zIndex: "2",
           }}>
-          <h2
+          <h3
             style={{
               margin: "0",
               padding: "0",
@@ -61,7 +61,7 @@ const HomePage = () => {
               paddingTop: "10px",
             }}>
             Скоро в кино
-          </h2>
+          </h3>
         </Box>
         <Swiper
           modules={[Navigation, Autoplay]}
