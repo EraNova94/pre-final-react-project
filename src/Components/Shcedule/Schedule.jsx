@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Paper, TextField } from "@mui/material";
-import React from "react";
+import React, { Fragment } from "react";
 import LiveTvIcon from "@mui/icons-material/LiveTv";
 import DescriptionIcon from "@mui/icons-material/Description";
 import ShopTwoIcon from "@mui/icons-material/ShopTwo";
@@ -16,6 +16,7 @@ import FormLabel from "@mui/material/FormLabel";
 
 const Schedule = () => {
   const { productsArr, readProduct } = useContext(productContext);
+  console.log(productsArr);
   useEffect(() => {
     readProduct();
   }, []);
@@ -23,7 +24,7 @@ const Schedule = () => {
     <Grid className="schedule__block" mt={20}>
       <Container maxWidth={"lg"}>
         <Grid
-          bgcolor="grey"
+          bgcolor="white"
           display="flex"
           justifyContent="space-between"
           borderRadius="10px"
@@ -86,7 +87,7 @@ const Schedule = () => {
             className="schedule__side">
             {productsArr
               ? productsArr.map(elem => (
-                  <>
+                  <Fragment key={elem.id}>
                     <Box
                       className="schedule__left"
                       display="flex"
@@ -95,6 +96,7 @@ const Schedule = () => {
                         <img
                           style={{
                             width: "250px",
+                            height: "400px",
                             borderRadius: "8px",
                           }}
                           src={elem.image}
@@ -128,7 +130,7 @@ const Schedule = () => {
                     <Box
                       className="schedule__right"
                       height="100%"
-                      width="50%"
+                      width="55%"
                       border="2px solid grey">
                       <Box
                         className="time__title"
@@ -151,10 +153,10 @@ const Schedule = () => {
                           <span>{elem.zone}</span>
                         </Box>
                         <Box display="flex" flexDirection="column" gap="5px">
-                          <span>{`Детский-${elem.price}`}</span>
-                          <span>Студенческий-150Сом</span>
-                          <span>Взрослый</span>
-                          <span>VIP</span>
+                          <span>{`Детский-${elem.kidPrice} сом`}</span>
+                          <span>{`Студенческий-${elem.studentPrice}Сом`}</span>
+                          <span>{`Взрослый-${elem.adultPrice}`}</span>
+                          <span>{`VIP-${elem.vipPrice}`}</span>
                         </Box>
                       </Box>
                       <Box
@@ -169,10 +171,10 @@ const Schedule = () => {
                           <span>{elem.zone2}</span>
                         </Box>
                         <Box display="flex" flexDirection="column" gap="5px">
-                          <span>{`Детский-${elem.price2}`}</span>
-                          <span>Студенческий-150Сом</span>
-                          <span>Взрослый</span>
-                          <span>VIP</span>
+                          <span>{`Детский-${elem.kidPrice} сом`}</span>
+                          <span>{`Студенческий-${elem.studentPrice}Сом`}</span>
+                          <span>{`Взрослый-${elem.adultPrice}`}</span>
+                          <span>{`VIP-${elem.vipPrice}`}</span>
                         </Box>
                       </Box>
                       <Box
@@ -187,14 +189,14 @@ const Schedule = () => {
                           <span>{elem.zone3}</span>
                         </Box>
                         <Box display="flex" flexDirection="column" gap="5px">
-                          <span>{`Детский-${elem.price3}`}</span>
-                          <span>Студенческий-150Сом</span>
-                          <span>Взрослый</span>
-                          <span>VIP</span>
+                          <span>{`Детский-${elem.kidPrice} сом`}</span>
+                          <span>{`Студенческий- ${elem.studentPrice} Сом`}</span>
+                          <span>{`Взрослый-${elem.adultPrice}`}</span>
+                          <span>{`VIP-${elem.vipPrice}`}</span>
                         </Box>
                       </Box>
                     </Box>
-                  </>
+                  </Fragment>
                 ))
               : null}
           </Grid>

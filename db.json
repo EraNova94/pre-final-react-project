@@ -107,35 +107,23 @@
     },
     {
       "showDay": "comingSoon",
-      "title": "312",
-      "ageLimit": "61532",
-      "image": "6513",
+      "title": "Шрам Парижа",
+      "ageLimit": "(16+)",
+      "image": "https://cinematica.kg/uploads/movies/507430ec-2aba-4deb-94a0-caff37b10912.JPG/300/430",
+      "trailer": "нет",
+      "description": "нет",
+      "time": "18:25",
+      "zone": "Билайн",
+      "kidPrice": "100",
+      "time2": "20:45",
+      "zone2": "Мегаком",
+      "studentPrice": "150",
+      "time3": "23:45",
+      "zone3": "Келечек",
+      "adultPrice": "400",
+      "genre": "Драма",
+      "vipPrice": "600",
       "id": 17
-    },
-    {
-      "showDay": "comingSoon",
-      "title": "56132",
-      "ageLimit": "16532",
-      "image": "1532",
-      "id": 18
-    },
-    {
-      "showDay": "123",
-      "title": "231",
-      "ageLimit": "321",
-      "image": "321",
-      "trailer": "231",
-      "description": "231",
-      "time": "231",
-      "zone": "231",
-      "price": "231",
-      "time2": "231",
-      "zone2": "231",
-      "price2": "231",
-      "time3": "231",
-      "zone3": "231",
-      "price3": "231",
-      "id": 19
     }
   ]
 }

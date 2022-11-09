@@ -35,7 +35,7 @@ const ProductContextProvider = ({ children }) => {
 
   // ? create
   async function addProduct(newProduct) {
-    // console.log(newProduct);
+    console.log(newProduct);
     try {
       await axios.post(API, newProduct);
     } catch (error) {

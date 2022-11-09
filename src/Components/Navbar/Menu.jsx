@@ -23,8 +23,8 @@ const Menu = ({ header, items, active, setActive }) => {
               onClick={() => setActive(false)}>
               X
             </div>
-            {items.map(item => (
-              <li>
+            {items.map((item, index) => (
+              <li key={index}>
                 <Link to={item.href}>{item.value}</Link>
               </li>
             ))}

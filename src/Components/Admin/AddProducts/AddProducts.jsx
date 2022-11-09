@@ -16,20 +16,40 @@ const AddProducts = () => {
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("");
   const [zone, setZone] = useState("");
-  const [price, setPrice] = useState("");
+  const [studentPrice, setStudentPrice] = useState("");
   const [time2, setTime2] = useState("");
   const [zone2, setZone2] = useState("");
-  const [price2, setPrice2] = useState("");
+  const [kidPrice, setKidPrice] = useState("");
   const [time3, setTime3] = useState("");
   const [zone3, setZone3] = useState("");
-  const [price3, setPrice3] = useState("");
+  const [adultPrice, setAdultPrice] = useState("");
+  const [genre, setGenre] = useState("");
+  const [vipPrice, setVipPrice] = useState("");
 
   function handleAdd(e) {
     e.preventDefault();
-    if (!showDay.trim() || !title.trim() || !ageLimit.trim() || !image.trim()) {
+    if (
+      !showDay.trim() ||
+      !title.trim() ||
+      !ageLimit.trim() ||
+      !image.trim() ||
+      !trailer.trim() ||
+      !description.trim() ||
+      !time.trim() ||
+      !zone.trim() ||
+      !studentPrice.trim() ||
+      !time2.trim() ||
+      !zone2.trim() ||
+      !kidPrice.trim() ||
+      !time3.trim() ||
+      !zone3.trim() ||
+      !adultPrice.trim() ||
+      !genre.trim() ||
+      !vipPrice.trim()
+    ) {
       toast.warn("🦄 Заполните все поля", {
         position: "top-center",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -48,13 +68,15 @@ const AddProducts = () => {
       description,
       time,
       zone,
-      price,
+      kidPrice,
       time2,
       zone2,
-      price2,
+      studentPrice,
       time3,
       zone3,
-      price3,
+      adultPrice,
+      genre,
+      vipPrice,
     };
     addProduct(obj);
     setShowDay("");
@@ -65,13 +87,15 @@ const AddProducts = () => {
     setDescription("");
     setTime("");
     setZone("");
-    setPrice("");
+    setKidPrice("");
     setTime2("");
     setZone2("");
-    setPrice2("");
+    setStudentPrice("");
     setTime3("");
     setZone3("");
-    setPrice3("");
+    setAdultPrice("");
+    setGenre("");
+    setVipPrice("");
   }
   return (
     <>
@@ -106,6 +130,13 @@ const AddProducts = () => {
           variant="outlined"
           value={title}
           onChange={e => setTitle(e.target.value)}
+        />
+        <TextField
+          className="outlined-basic"
+          label="Жанр"
+          variant="outlined"
+          value={genre}
+          onChange={e => setGenre(e.target.value)}
         />
         <TextField
           className="outlined-basic"
@@ -151,10 +182,10 @@ const AddProducts = () => {
         />
         <TextField
           className="outlined-basic"
-          label="Цена"
+          label="Цена для детей"
           variant="outlined"
-          value={price}
-          onChange={e => setPrice(e.target.value)}
+          value={kidPrice}
+          onChange={e => setKidPrice(e.target.value)}
         />
         <TextField
           className="outlined-basic"
@@ -172,10 +203,10 @@ const AddProducts = () => {
         />
         <TextField
           className="outlined-basic"
-          label="Цена"
+          label="Цена для студентов"
           variant="outlined"
-          value={price2}
-          onChange={e => setPrice2(e.target.value)}
+          value={studentPrice}
+          onChange={e => setStudentPrice(e.target.value)}
         />
         <TextField
           className="outlined-basic"
@@ -193,10 +224,17 @@ const AddProducts = () => {
         />
         <TextField
           className="outlined-basic"
-          label="Цена"
+          label="Цена для взрослых"
           variant="outlined"
-          value={price3}
-          onChange={e => setPrice3(e.target.value)}
+          value={adultPrice}
+          onChange={e => setAdultPrice(e.target.value)}
+        />
+        <TextField
+          className="outlined-basic"
+          label="ВИП Цена"
+          variant="outlined"
+          value={vipPrice}
+          onChange={e => setVipPrice(e.target.value)}
         />
         <Button variant="contained" type="submit">
           Добавить
