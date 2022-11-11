@@ -95,7 +95,7 @@ const Schedule = () => {
                       <Box width="60%" padding="20px">
                         <img
                           style={{
-                            width: "250px",
+                            width: "100%",
                             height: "400px",
                             borderRadius: "8px",
                           }}

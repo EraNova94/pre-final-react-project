@@ -13,10 +13,11 @@ const About = () => {
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx_TvL_5pTq_HgIn3d8utu4bW1JMtjL4SKdg&usqp=CAU"
                 alt="main-logo"
+                width="100%"
               />
             </Box>
           </Box>
-          <Box width="800px" textAlign="center" margin="0 auto">
+          <Box width="100%" textAlign="center" margin="0 auto">
             <p style={{ fontSize: "20px", fontWeight: "500" }}>
               Кинотеатр "Metropolitan" первый широкоэкранный кинотеатр в
               Советской Киргизии. Открыт в 1957 году. Демонстрировались

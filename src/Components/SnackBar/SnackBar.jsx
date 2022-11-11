@@ -9,7 +9,7 @@ const SnackBar = () => {
           <Box display="flex" flexDirection="column" alignItems="center">
             <h2>СНЭК-БАР</h2>
           </Box>
-          <Box width="800px" textAlign="center" margin="0 auto">
+          <Box width="100%" textAlign="center" margin="0 auto">
             <p style={{ fontSize: "20px", fontWeight: "500" }}>
               В нашем кинотеатре есть Кинобар, где можно приобрести напитки,
               свежие выпечки и вкусные попкорны разных вкусов - не только

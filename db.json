@@ -8,9 +8,9 @@
       "id": 1
     },
     {
-      "showDay": "today",
-      "title": "Астрал",
-      "ageLimit": "Реинкарнация",
+      "showDay": "comingSoon",
+      "title": "asd",
+      "ageLimit": "dasd",
       "image": "https://cinematica.kg/uploads/movies/68793f85-3a91-4c30-88ec-e41fa0bf558a.jpg/300/430",
       "id": 3
     },
@@ -124,6 +124,26 @@
       "genre": "Драма",
       "vipPrice": "600",
       "id": 17
+    },
+    {
+      "showDay": "today",
+      "title": "231",
+      "ageLimit": "321",
+      "image": "312",
+      "trailer": "321",
+      "description": "321",
+      "time": "321",
+      "zone": "321",
+      "kidPrice": "231",
+      "time2": "651",
+      "zone2": "321",
+      "studentPrice": "321",
+      "time3": "321",
+      "zone3": "321",
+      "adultPrice": "321",
+      "genre": "32",
+      "vipPrice": "321",
+      "id": 18
     }
   ]
 }
